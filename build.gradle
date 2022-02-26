@@ -21,7 +21,7 @@ repositories {
 }
 
 application {
-    mainClass = 'com.example.demo.ProjetSiSqlApplication.main'
+    mainClass = 'ProjetSiSqlApplication.class'
 }
 
 
