@@ -26,7 +26,7 @@ import com.example.demo.repository.CategoryRepository;
 import com.example.demo.repository.CustumerRepository;
 import com.example.demo.repository.ProductRepository;
 import com.example.demo.repository.OrderRepository;
-@CrossOrigin(origins= {"http://localhost:3000"})
+@CrossOrigin(origins= {"https://jee-project.vercel.app"})
 @RestController
 @RequestMapping("/api")
 public class OrderController {
