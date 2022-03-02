@@ -54,3 +54,31 @@ tasks.named('test') {
 	useJUnitPlatform()
 }
 
+task deployJar(type: Jar, dependsOn: jar) {
+  baseName = project.name + '-deploy'
+  deps = configurations.runtime + configurations.archives.allArtifactFiles
+  depClasses = { deps.collect { it.isDirectory() ? it : zipTree(it) } }
+  from(depClasses) { 
+    exclude 'META-INF/MANIFEST.MF'
+  }
+  manifest {
+    attributes(
+      'classpath':  files('build/libs/ProjetSiSql-0.0.1-SNAPSHOT.jar'),
+      'Main-Class': "com.example.demo.ProjetSiSqlApplication"
+    )
+  }
+  }
+}
+
+jar {
+ 
+  manifest {
+    attributes(
+      'classpath':  files('build/libs/ProjetSiSql-0.0.1-SNAPSHOT.jar'),
+      'Main-Class': "com.example.demo.ProjetSiSqlApplication"
+    )
+  }
+ 
+}
+
+
