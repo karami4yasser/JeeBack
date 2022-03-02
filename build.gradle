@@ -6,6 +6,17 @@ plugins {
 	
 
 }
+
+jar {
+  manifest {
+    attributes(
+      'Class-Path': files('build/lib/libs/ProjetSiSql-0.0.1-SNAPSHOT-plain.jar'),
+      'Main-Class': 'com.example.demo.ProjetSiSqlApplication'
+    )
+  }
+}
+
+
 task createStartScripts(type: CreateStartScripts) {
   outputDir = file('build/sample')
   mainClass = 'com.example.demo.ProjetSiSqlApplication'
