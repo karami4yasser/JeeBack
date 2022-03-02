@@ -7,7 +7,17 @@ plugins {
 
 }
 
-
+task fatJar(type: Jar) {
+	manifest {
+      attributes(
+      'classpath':  files('build/libs/ProjetSiSql-0.0.1-SNAPSHOT.jar'),
+      'Main-Class': "com.example.demo.ProjetSiSqlApplication"
+    )
+    }
+    baseName = project.name + '-all'
+    
+    with jar
+}
 
 
 
