@@ -55,18 +55,17 @@ tasks.named('test') {
 	useJUnitPlatform()
 }
 
-
-
-jar {
- 
-  manifest {
-    attributes(
+task fatJar(type: Jar) {
+	manifest {
+      attributes(
       'classpath':  files('build/libs/ProjetSiSql-0.0.1-SNAPSHOT.jar'),
       'Main-Class': "com.example.demo.ProjetSiSqlApplication"
     )
-  }
-
- 
+    }
+    baseName = project.name + '-all'
+    from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
+    with jar
 }
+
 
 
