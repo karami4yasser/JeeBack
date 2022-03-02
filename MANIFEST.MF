@@ -1,7 +1,7 @@
 jar {
   manifest {
     attributes(
-      'Class-Path': configurations.compile.collect { it.getName() }.join(' '),
+      'classpath':  files('build/libs/ProjetSiSql-0.0.1-SNAPSHOT-plain.jar'),
       'Main-Class': 'com.example.demo.ProjetSiSqlApplication'
     )
   }
