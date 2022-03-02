@@ -5,7 +5,14 @@ plugins {
 	
 
 }
-
+jar {
+  manifest {
+    attributes(
+      'Class-Path': configurations.compile.collect { it.getName() }.join(' '),
+      'Main-Class': 'com.example.demo.ProjetSiSqlApplication'
+    )
+  }
+}
 group = 'com.ProjetSiSql'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '8'
