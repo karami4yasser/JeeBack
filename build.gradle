@@ -10,7 +10,7 @@ plugins {
 jar {
   manifest {
     attributes(
-      
+      'classpath':  files('build/libs/ProjetSiSql-0.0.1-SNAPSHOT-plain.jar'),
       'Main-Class': 'com.example.demo.ProjetSiSqlApplication'
     )
   }
@@ -21,11 +21,11 @@ task createStartScripts(type: CreateStartScripts) {
   outputDir = file('build/sample')
   mainClass = 'com.example.demo.ProjetSiSqlApplication'
   applicationName = 'ProjetSiSql'
-  classpath = files('build/lib/libs/ProjetSiSql-0.0.1-SNAPSHOT-plain.jar')
+  classpath = files('build/libs/ProjetSiSql-0.0.1-SNAPSHOT-plain.jar')
 }
 group = 'com.ProjetSiSql'
 version = '0.0.1-SNAPSHOT'
-sourceCompatibility = '10'
+sourceCompatibility = '8'
 
 configurations {
 	compileOnly {
