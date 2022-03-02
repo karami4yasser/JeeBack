@@ -54,17 +54,7 @@ dependencies {
 tasks.named('test') {
 	useJUnitPlatform()
 }
-jar {
- 
-  manifest {
-    attributes(
-      'classpath':  files('build/libs/ProjetSiSql-0.0.1-SNAPSHOT.jar'),
-      'Main-Class': "com.example.demo.ProjetSiSqlApplication"
-    )
-  }
 
- 
-}
 task fatJar(type: Jar) {
 	manifest {
       attributes(
@@ -78,4 +68,14 @@ task fatJar(type: Jar) {
 }
 
 
+jar {
+ 
+  manifest {
+    attributes(
+      'classpath':  files('build/libs/ProjetSiSql-0.0.1-SNAPSHOT.jar'),
+      'Main-Class': "com.example.demo.ProjetSiSqlApplication"
+    )
+  }
 
+ 
+}
