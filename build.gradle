@@ -6,12 +6,13 @@ plugins {
 	
 
 }
+mainClassName = "ProjetSiSqlApplication"
 
 jar {
   manifest {
     attributes(
       'classpath':  files('build/libs/ProjetSiSql-0.0.1-SNAPSHOT-plain.jar'),
-      'Main-Class': 'ProjetSiSqlApplication'
+      'Main-Class': "$mainClassName"
     )
   }
   from {
