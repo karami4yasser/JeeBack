@@ -10,7 +10,7 @@ plugins {
 jar {
   manifest {
     attributes(
-      'Class-Path': files('build/lib/libs/ProjetSiSql-0.0.1-SNAPSHOT-plain.jar'),
+      
       'Main-Class': 'com.example.demo.ProjetSiSqlApplication'
     )
   }
