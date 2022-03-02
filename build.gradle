@@ -6,20 +6,9 @@ plugins {
 	
 
 }
-mainClassName = "ProjetSiSqlApplication"
 
-jar {
- from {
-    configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
-  }
-  manifest {
-    attributes(
-      'classpath':  files('build/libs/ProjetSiSql-0.0.1-SNAPSHOT-plain.jar'),
-      'Main-Class': "$mainClassName"
-    )
-  }
- 
-}
+
+
 
 
 task createStartScripts(type: CreateStartScripts) {
@@ -65,4 +54,13 @@ tasks.named('test') {
 	useJUnitPlatform()
 }
 
-
+jar {
+ 
+  manifest {
+    attributes(
+      'classpath':  files('build/libs/ProjetSiSql-0.0.1-SNAPSHOT-plain.jar'),
+      'Main-Class': "com.example.demo.ProjetSiSqlApplication"
+    )
+  }
+ 
+}
