@@ -9,15 +9,16 @@ plugins {
 mainClassName = "ProjetSiSqlApplication"
 
 jar {
+ from {
+    configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
+  }
   manifest {
     attributes(
       'classpath':  files('build/libs/ProjetSiSql-0.0.1-SNAPSHOT-plain.jar'),
-      'Main-Class': "$mainClassName"
+      'Main-Class': 'ProjetSiSqlApplication'
     )
   }
-  from {
-    configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
-  }
+ 
 }
 
 
