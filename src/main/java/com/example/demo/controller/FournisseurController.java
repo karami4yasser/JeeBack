@@ -25,14 +25,28 @@ import com.example.demo.repository.CategoryRepository;
 import com.example.demo.repository.CustumerRepository;
 import com.example.demo.repository.FournisseurRepository;
 import com.example.demo.repository.ProductRepository;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
-
-@CrossOrigin(origins= {"http://localhost:3000"})
 @RestController
 @RequestMapping("/api")
 public class FournisseurController {
 	@Autowired
 	private FournisseurRepository FournisseurRepository; 
+
+	@GetMapping("/fournisseurs")
+		ResponseEntity<Map<String, Object>> getFournisseurs(){
+
+		 List<Founisseur> Product =  FournisseurRepository.findAll();
+
+	    Map<String, Object> response = new HashMap<>();
+	    response.put("products",Product);
+	    
+
+		 return new ResponseEntity<>(response, HttpStatus.OK);
+		 
+		}
 		
 		
 		

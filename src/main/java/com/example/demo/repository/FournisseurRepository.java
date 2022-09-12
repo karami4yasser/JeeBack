@@ -6,4 +6,6 @@ import com.example.demo.model.Founisseur;
 
 public interface FournisseurRepository  extends JpaRepository<Founisseur, Long>{
 
+    List<Founisseur> findAll();
+
 }
