@@ -41,7 +41,7 @@ public class FournisseurController {
 		 List<Founisseur> Product =  FournisseurRepository.findAll();
 
 	    Map<String, Object> response = new HashMap<>();
-	    response.put("products",Product);
+	    response.put("fournisseurs",Product);
 	    
 
 		 return new ResponseEntity<>(response, HttpStatus.OK);
